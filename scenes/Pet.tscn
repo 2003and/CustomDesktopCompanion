@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgwvusbj7wuu1"]
+
+[ext_resource type="Script" path="res://scripts/Logic.gd" id="1_6xbjw"]
+[ext_resource type="SpriteFrames" uid="uid://dum0bpq4ffiqo" path="res://animation.tres" id="1_g3d27"]
+
+[node name="Pet" type="Node2D"]
+script = ExtResource("1_6xbjw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(150, 150)
+scale = Vector2(3.123, 3.123)
+sprite_frames = ExtResource("1_g3d27")
+animation = &"idle"
+speed_scale = 1.7
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

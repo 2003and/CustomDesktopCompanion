@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxfqnujystyxm"]
+
+[ext_resource type="PackedScene" uid="uid://cgwvusbj7wuu1" path="res://scenes/Pet.tscn" id="1_dnlbq"]
+[ext_resource type="PackedScene" uid="uid://duf5gcteu63u8" path="res://scenes/Taskbar.tscn" id="2_yd0n6"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pet" parent="." instance=ExtResource("1_dnlbq")]
+
+[node name="Taskbar" parent="." instance=ExtResource("2_yd0n6")]
+layout_mode = 1
+offset_top = 300.0
+offset_bottom = 0.0

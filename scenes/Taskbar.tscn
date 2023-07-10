@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://duf5gcteu63u8"]
+
+[ext_resource type="Script" path="res://scripts/Taskbar.gd" id="1_6tjmt"]
+[ext_resource type="Texture2D" uid="uid://m5irrkj4x7hv" path="res://movement_icon.png" id="2_fc1fo"]
+[ext_resource type="Texture2D" uid="uid://rrounr2akf2m" path="res://images/x_mark.png" id="3_mk08d"]
+[ext_resource type="Texture2D" uid="uid://jyfsc7fpgl8y" path="res://images/appear.png" id="4_fvbah"]
+
+[node name="Taskbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6tjmt")
+
+[node name="TaskbarBG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 40.0
+color = Color(0.137255, 0, 0.270588, 1)
+
+[node name="MovementIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_fc1fo")
+expand_mode = 1
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 260.0
+offset_right = 300.0
+offset_bottom = 40.0
+icon = ExtResource("3_mk08d")
+expand_icon = true
+
+[node name="AppearButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_right = 256.0
+offset_bottom = 40.0
+icon = ExtResource("4_fvbah")
+expand_icon = true
+
+[connection signal="gui_input" from="MovementIcon" to="." method="_on_movement_icon_gui_input"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
